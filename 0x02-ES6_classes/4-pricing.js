@@ -22,11 +22,23 @@ export default class Pricing {
     }
   
     set currency(currency) {
-      if (typeof currency !== 'currency') throw new TypeError('Currency must be a currency');
+      if (!(currency instanceof Currency)) throw new TypeError('Currency must be a currency');
       this._currency = currency;
     }
   
+    // Functions
     displayFullPrice() {
-      return `${this.name} (${this.code})`;
+      return `${this.amount} ${this.currency.name} (${this.currency.code})`;
     }
-  }
+
+    static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number') {
+        throw new TypeError('Amount must be a number');
+    }
+
+    if (typeof conversionRate !== 'number') {
+        throw new TypeError('Conversion must be a number');
+    }
+    return amount * conversionRate;
+    }
+}
