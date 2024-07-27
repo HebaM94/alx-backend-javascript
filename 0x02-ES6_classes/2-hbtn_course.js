@@ -20,12 +20,12 @@ export default class HolbertonCourse {
 
   // Setters
   set name(name) {
-    if (typeof name !== 'string') throw TypeError('Name must be a string');
+    if (typeof name !== 'string') throw new TypeError('Name must be a string');
     this._name = name;
   }
 
   set length(length) {
-    if (typeof length !== 'number') throw TypeError('Length must be a number');
+    if (typeof length !== 'number') throw new TypeError('Length must be a number');
     this._length = length;
   }
 
