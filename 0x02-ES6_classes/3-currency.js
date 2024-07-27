@@ -1,7 +1,7 @@
 export default class Currency {
   constructor(code, name) {
-    this._code = code;
-    this._name = name;
+    this.code = code;
+    this.name = name;
   }
 
   // Getter
@@ -10,7 +10,7 @@ export default class Currency {
   }
 
   get name() {
-    return this._code;
+    return this._name;
   }
 
   // Setters
