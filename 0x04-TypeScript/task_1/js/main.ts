@@ -7,7 +7,7 @@ interface Teacher {
     [index: string]: any;
 }
 
-interface Director extends Teacher{
+interface Directors extends Teacher{
     numberOfReports: number;
 }
 
