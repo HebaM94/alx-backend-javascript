@@ -3,6 +3,7 @@ const http = require('http');
 const host = '127.0.0.1';
 const port = 1245;
 const app = http.createServer((req, resp) => {
+  // eslint-disable-next-line no-param-reassign
   resp.statusCode = 200;
   resp.setHeader('Content-Type', 'text/plain');
   resp.end('Hello Holberton School!');
