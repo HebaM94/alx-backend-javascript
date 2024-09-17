@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 function countStudents(dbPath) {
   try {
     let students = fs.readFileSync(dbPath, 'utf-8');
@@ -17,7 +18,7 @@ function countStudents(dbPath) {
         courses.set(field, { students: [firstName], count: 1 });
       }
     });
-console.log(`Number of students: ${students.length}`);
+    console.log(`Number of students: ${students.length}`);
     courses.forEach((courseData, course) => {
       console.log(`Number of students in ${course}: ${courseData.count}. List: ${courseData.students.join(', ')}`);
     });
